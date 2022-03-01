@@ -3,7 +3,6 @@ const router = express.Router();
 const crypto = require("crypto");
 const { words } = require("../words");
 const Score = require("../models/Score");
-const faker = require("faker");
 
 function generateRandom(limit, length) {
   var arr = [];
@@ -47,7 +46,7 @@ router.post("/start", async function (req, res) {
   if (!user) {
     // Unable to generate/retrieve one, propose one
     user = {
-      user: faker.internet.userName(),
+      user: "Random User",
     };
   }
 

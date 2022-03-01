@@ -7,12 +7,7 @@ const mongoose = require("mongoose");
 const dbURL =
   "mongodb+srv://voxies:voxies@cluster0.kmql7.mongodb.net/wordRace?retryWrites=true&w=majority";
 mongoose
-  .connect(dbURL, {
-    useUnifiedTopology: true,
-    useNewUrlParser: true,
-    useFindAndModify: false,
-    useCreateIndex: true,
-  })
+  .connect(dbURL)
   .then(() => console.log("connected to DB successfully"))
   .catch((err) => console.log("couldn't connect to database:", err.message));
 
